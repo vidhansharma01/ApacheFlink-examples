@@ -9,10 +9,10 @@ public class JobRunner implements ApplicationRunner {
 
     // Only one demo job should execute at startup because each job submits the
     // Flink environment for execution.
-    private final UserEventCountStateJob userEventCountStateJob;
+    private final EventDeduplicationJob eventDeduplicationJob;
 
-    public JobRunner(UserEventCountStateJob userEventCountStateJob) {
-        this.userEventCountStateJob = userEventCountStateJob;
+    public JobRunner(EventDeduplicationJob eventDeduplicationJob) {
+        this.eventDeduplicationJob = eventDeduplicationJob;
     }
 
     @Override
@@ -20,6 +20,6 @@ public class JobRunner implements ApplicationRunner {
         // ApplicationRunner is a good place for demo jobs like this because
         // it runs once at startup and keeps the bootstrapping logic out of
         // the main application class.
-        userEventCountStateJob.execute();
+        eventDeduplicationJob.execute();
     }
 }
