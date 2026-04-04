@@ -9,10 +9,10 @@ public class JobRunner implements ApplicationRunner {
 
     // Only one demo job should execute at startup because each job submits the
     // Flink environment for execution.
-    private final EventDeduplicationJob eventDeduplicationJob;
+    private final KafkaFraudDetectionJob kafkaFraudDetectionJob;
 
-    public JobRunner(EventDeduplicationJob eventDeduplicationJob) {
-        this.eventDeduplicationJob = eventDeduplicationJob;
+    public JobRunner(KafkaFraudDetectionJob kafkaFraudDetectionJob) {
+        this.kafkaFraudDetectionJob = kafkaFraudDetectionJob;
     }
 
     @Override
@@ -20,6 +20,6 @@ public class JobRunner implements ApplicationRunner {
         // ApplicationRunner is a good place for demo jobs like this because
         // it runs once at startup and keeps the bootstrapping logic out of
         // the main application class.
-        eventDeduplicationJob.execute();
+        kafkaFraudDetectionJob.execute();
     }
 }
