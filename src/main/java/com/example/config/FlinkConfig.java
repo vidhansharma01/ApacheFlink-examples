@@ -19,6 +19,7 @@ public class FlinkConfig {
         // for a fixed set of lines because the pipeline can complete on its own
         // once all records have been processed.
         env.setRuntimeMode(RuntimeExecutionMode.BATCH);
+        env.enableCheckpointing(60_000);
 
         // Force a single parallel task so console output is easier to read
         // and deterministic during local debugging.
