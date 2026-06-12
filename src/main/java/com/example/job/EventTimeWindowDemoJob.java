@@ -26,6 +26,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 @Component
 public class EventTimeWindowDemoJob {
