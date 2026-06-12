@@ -48,4 +48,4 @@ Checkpoint/restart verification:
 1. Let the job run long enough for at least one checkpoint to complete.
 2. Stop the Spring Boot process.
 3. Start the job again with the same consumer group.
-4. Produce a new transaction and verify the job continues from the last committed checkpointed Kafka offsets rather than replaying already processed records.
+4. Produce a new transaction and verify the job continues from the last committed checkpointed Kafka offsets rather than replaying already processed records...
